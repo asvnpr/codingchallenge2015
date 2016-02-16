@@ -14,11 +14,13 @@ def intToWord(n):
         build = []
         word = ""
         numStr = str(n) #convert int num to String
+        if (n < 0):
+            numStr = numStr[1:]
         l = len(numStr)
 
         #capture all digits in int n in a list
         for i in range(0, len(numStr)):
-            digits.append(int(numStr[i]))
+                digits.append(int(numStr[i]))
 
         # go through list and convert digits to words and build the string
         teen = False #used for preventing
@@ -85,11 +87,13 @@ def intToWord(n):
                     build.append(ones[digits[-l]])
             l -= 1
         teen = False #reset teen bool in cases where n is of form #15,#15,#15 or similar
+        if (n < 0):
+            build.insert(0, 'negative')
         word = ' '.join(build) #add spaces between words and save the completed string
         return word
 
-n = int(raw_input("Enter a whole number between 0 and 999,999,999: "))
-while (n > 999999999 or n < 0):
+n = input("Enter a whole number between 0 and 999,999,999: ")
+while (n > 999999999 or n < -999999999):
     print "Error! You entered a value that was too large or too small."
     n = int(raw_input("Please enter a whole number between 0 and 999,999,999: "))
 print intToWord(n)
