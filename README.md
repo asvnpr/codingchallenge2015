@@ -37,3 +37,6 @@ int_to_word(200017)   == "two hundred thousand seventeen"
 int_to_word(784)      == "seven hundred eighty four"
 int_to_word(1000215)  == "one million two hundred fifteen"
 ```
+
+## Very Small Change:
+- added 'and' in the output phrase where appropriate. Felt more natural
